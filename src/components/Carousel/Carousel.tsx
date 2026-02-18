@@ -39,7 +39,7 @@ export default function Carousel({
 
   // Keyboard navigation
   useEffect(() => {
-    function onKey(e: KeyboardEvent) {
+    function onKeyDown(e: KeyboardEvent) {
       if (!isActive) return;
       if (e.key === "ArrowRight") {
         e.preventDefault();
@@ -52,16 +52,17 @@ export default function Carousel({
         console.log(`Selected: ${items[activeIndex]?.title}`);
       }
     }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [isActive, items, activeIndex]);
 
   // Windowed rendering
   const buffer = 1; // Number of items to render before and after the visible area
   const start = Math.min(
     Math.max(0, activeIndex - buffer),
-    items.length - itemsPerView - buffer,
+    Math.max(0, items.length - itemsPerView - buffer),
   );
+
   let end = Math.min(items.length, activeIndex + itemsPerView + buffer);
   if (6 < items.length) {
     // Start of the carousel may have less than 6 items, so ensure we render at least 6 for better UX
