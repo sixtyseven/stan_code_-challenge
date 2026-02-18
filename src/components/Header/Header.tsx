@@ -22,7 +22,7 @@ export default function Header({ navItems = [] }: HeaderProps) {
 
   return (
     <header className="topbar">
-      <a href="#" target="_blank" rel="noreferrer">
+      <a href="#">
         <img src={stanLogo} className="logo" alt="Stan logo" />
       </a>
       <nav className="nav" aria-label="Primary navigation">

@@ -6,9 +6,6 @@
 ## scripts (Or check package.json scripts for reference.)
 
 1. `install: npm run install`
-
-   Note: React 19 currently has some compatibility issues with the Testing Library. To bypass these peer dependency conflicts, I used the `--legacy-peer-deps` flag during installation for this exercise."
-
 1. `dev: npm run vite`
 1. `lint: npm run lint`
 1. `test: npm run test`
@@ -41,4 +38,6 @@
 
 1. Performance Auditing: I will perform a deep audit of useEffects to eliminate potential memory leaks and optimize rendering by preventing unnecessary re-renders.
 
-1. Dependency Optimization: To move beyond a temporary fix, I will refine the project configuration to explicitly define the peer dependency tree or overwrite, replacing the need for the --legacy-peer-deps flag with a more stable, long-term solution.
+1. Manual Testing: Test on different OS/devices/browsers to ensure the app works elegantly on all suporting devices (Current development environment is MacOS + Chrome (Version 144.0.7559.133 (Official Build) (arm64)))
+
+1. Dependancies Management: Update the dependancies to the latest version if needed.
