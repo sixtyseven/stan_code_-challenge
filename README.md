@@ -12,9 +12,11 @@
 1. `build: npm run build`
 1. `preview: npm run preview`
 
-   Note: Preview the built codes, ensure you run the build command before the preview command.".
+   Note: Preview the built codes, ensure you run the build command before the preview command.
 
-## How did you decide on the technical and architectural choices used as part of your solution?
+## Architectural & Technical Decisions
+
+1. Prioritisation and MVP: I prioritised correctness and navigation behaviour over visual polish, as predictability and responsiveness are more critical in TV-style interfaces.
 
 1. Project Initialization: Thought I have extensive experience with Webpack and babel, I used Vite to initialize the application because of its intuitive initialisation, superior build speed, extensive documentation and strong community support .
 
@@ -26,7 +28,7 @@
 
 1. Responsive Units: I utilized rem units for proportional scaling. This ensures the layout and typography adapt automatically to the user's root HTML font-size settings. Conversely, I used pixels (px) for fixed, static elements like borders and specific spacing.
 
-## Are there any improvements you could make to your submission? What would you do differently if you were allocated more time?
+## Potential Improvements With More Time
 
 1. Enhanced Navigation: I plan to implement 2D navigation (up, down, left and right keyboard control) on the Home page, the Header and the Carousel.
 
@@ -43,3 +45,7 @@
 1. Dependency Management: Periodically audit and upgrade dependencies to their latest stable versions to ensure security and performance.
 
 1. Scalable Units: Refactor static px values to rem units where appropriate to improve scalability.
+
+1. Carousel component: the codes can be refactored to be cleaner and more generic
+
+1. Accessibility: Implement further A11y best practices to ensure the application is inclusive and accessible to a wider user base.
