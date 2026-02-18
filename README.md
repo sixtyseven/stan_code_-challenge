@@ -34,10 +34,12 @@
 
 1. Component Documentation: I would integrate Storybook to document components in isolation, which facilitates easier testing and collaboration across the team. I might consider using styled-component library.
 
-1. Expanded Test Coverage: I plan to increase the unit test coverage to test more complex business logic and edge cases, ensuring higher code reliability.
+1. Expanded Test Coverage: I plan to increase the unit test coverage to test more thorough business logic and edge cases, ensuring higher code reliability.
 
 1. Performance Auditing: I will perform a deep audit of useEffects to eliminate potential memory leaks and optimize rendering by preventing unnecessary re-renders.
 
 1. Manual Testing: Test on different OS/devices/browsers to ensure the app works elegantly on all suporting devices (Current development environment is MacOS + Chrome (Version 144.0.7559.133 (Official Build) (arm64)))
 
-1. Dependancies Management: Update the dependancies to the latest version if needed.
+1. Dependency Management: Periodically audit and upgrade dependencies to their latest stable versions to ensure security and performance.
+
+1. Scalable Units: Refactor static px values to rem units where appropriate to improve scalability.

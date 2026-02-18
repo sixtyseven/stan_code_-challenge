@@ -60,6 +60,8 @@ export default function Carousel({
   const buffer = 1; // Number of items to render before and after the visible area
   const start = Math.min(
     Math.max(0, activeIndex - buffer),
+    // Ensure we don't start too far back when near the end
+    // Or esle we may end up with too few items rendered at the end of the list
     Math.max(0, items.length - itemsPerView - buffer),
   );
 
