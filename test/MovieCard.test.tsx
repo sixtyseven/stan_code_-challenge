@@ -2,6 +2,7 @@ import React from "react";
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import MovieCard from "../src/components/MovieCard/MovieCard";
+import { Movie } from "../src/type/type";
 
 const sampleMovie = {
   id: 1,
@@ -26,7 +27,7 @@ describe("MovieCard component", () => {
   });
 
   it("renders movie image and link when movie provided", () => {
-    render(<MovieCard movie={sampleMovie as any} dataIndex={5} />);
+    render(<MovieCard movie={sampleMovie as Movie} dataIndex={5} />);
     const img = screen.getByAltText("Sample Movie");
     expect(img).toBeInTheDocument();
     const anchor = img.closest("a");
