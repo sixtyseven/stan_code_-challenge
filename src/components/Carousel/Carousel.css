@@ -1,0 +1,24 @@
+.carousel-section {
+  margin-top: 36px;
+}
+
+.carousel-wrap {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 16px;
+  align-items: flex-end;
+}
+
+.carousel-wrap::-webkit-scrollbar {
+  height: 12px;
+}
+
+.carousel-wrap::-webkit-scrollbar-thumb {
+  background: #222;
+}
+
+.spacer {
+  width: 40px;
+}
