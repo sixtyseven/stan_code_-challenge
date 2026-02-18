@@ -15,19 +15,8 @@ export default function Carousel({
   isActive = false,
 }: CarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [itemsPerView, setItemsPerView] = useState(5);
+  const itemsPerView = 4; // Fixed 4 items per view
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  // Responsive items per view
-  useEffect(() => {
-    function update() {
-      const w = window.innerWidth;
-      setItemsPerView(w > 1280 ? 5 : 4);
-    }
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
 
   // Keep activeIndex in bounds
   useEffect(() => {
@@ -74,13 +63,20 @@ export default function Carousel({
   }, [isActive, items, activeIndex]);
 
   // Windowed rendering
-  const buffer = itemsPerView * 2;
-  const start = Math.max(0, activeIndex - buffer);
-  const end = Math.min(items.length, activeIndex + itemsPerView + buffer);
+  const buffer = 1; // Number of items to render before and after the visible area
+  const start = Math.min(
+    Math.max(0, activeIndex - buffer),
+    items.length - itemsPerView - buffer,
+  );
+  let end = Math.min(items.length, activeIndex + itemsPerView + buffer);
+  if (6 < items.length) {
+    // Start of the carousel may have less than 6 items, so ensure we render at least 6 for better UX
+    end = Math.max(end, 6);
+  }
   const windowed = items.slice(start, end);
 
   // Skeleton cards
-  const skeletonCount = itemsPerView + 3; // Add some extra skeletons for better UX
+  const skeletonCount = itemsPerView + 2; // Add some extra skeletons for better UX
   const skeletons = Array.from({ length: skeletonCount });
 
   return (

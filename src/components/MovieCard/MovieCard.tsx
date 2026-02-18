@@ -30,7 +30,9 @@ export default function MovieCard({
       data-index={dataIndex}
       aria-label={movie.title}
     >
-      <img src={movie.image} alt={movie.title} loading="lazy" />
+      <a href={"#"}>
+        <img src={movie.image} alt={movie.title} loading="lazy" />
+      </a>
     </div>
   );
 }

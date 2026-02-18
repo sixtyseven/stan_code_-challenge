@@ -1,5 +1,5 @@
 .movie-card {
-  flex: 0 0 240px;
+  flex: 0 0 280px;
   position: relative;
   border-radius: 3px;
   overflow: hidden;
@@ -10,7 +10,7 @@
 
 .movie-card img {
   width: 100%;
-  height: 360px;
+  height: 420px;
   object-fit: cover;
   display: block;
 }
@@ -24,11 +24,11 @@
 
 @media (max-width: 1280px) {
   .movie-card {
-    flex: 0 0 200px;
+    flex: 0 0 220px;
   }
 
   .movie-card img {
-    height: 300px;
+    height: 330px;
   }
 }
 
@@ -41,10 +41,16 @@
 
 .skeleton-image {
   width: 100%;
-  height: 360px;
+  height: 420px;
   background: linear-gradient(90deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s infinite;
+}
+
+@media (max-width: 1280px) {
+  .skeleton-image {
+    height: 330px;
+  }
 }
 
 @keyframes skeleton-shimmer {
@@ -53,15 +59,5 @@
   }
   100% {
     background-position: -200% 0;
-  }
-}
-
-.skeleton-image {
-  height: 330px;
-}
-
-@media (max-width: 1280px) {
-  .skeleton-image {
-    height: 300px;
   }
 }
