@@ -1,0 +1,67 @@
+.movie-card {
+  flex: 0 0 220px;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #222;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+  transform: translateZ(0);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-card.active {
+  outline: 4px solid rgba(11, 102, 255, 0.75);
+  box-shadow:
+    0 0 0 4px rgba(11, 102, 255, 0.25),
+    0 6px 18px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 1280px) {
+  .movie-card {
+    flex: 0 0 160px;
+  }
+
+  .movie-card img {
+    height: 240px;
+  }
+}
+
+/* skeleton loading styles */
+.movie-card.skeleton {
+  background: #1a1a1a;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 330px;
+  background: linear-gradient(90deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-image {
+  height: 330px;
+}
+
+@media (max-width: 1280px) {
+  .skeleton-image {
+    height: 240px;
+  }
+}
