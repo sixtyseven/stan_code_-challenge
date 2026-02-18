@@ -5,7 +5,6 @@ interface MovieCardProps {
   movie?: Movie;
   isActive?: boolean;
   isSkeleton?: boolean;
-  onKeyDown?: (e: React.KeyboardEvent) => void;
   dataIndex?: number;
 }
 
@@ -13,7 +12,6 @@ export default function MovieCard({
   movie,
   isActive = false,
   isSkeleton = false,
-  onKeyDown,
   dataIndex,
 }: MovieCardProps) {
   if (isSkeleton) {
@@ -30,7 +28,6 @@ export default function MovieCard({
     <div
       className={`movie-card${isActive ? " active" : ""}`}
       data-index={dataIndex}
-      onKeyDown={onKeyDown}
       aria-label={movie.title}
     >
       <img src={movie.image} alt={movie.title} loading="lazy" />
