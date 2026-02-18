@@ -18,12 +18,6 @@ export default function Carousel({
   const itemsPerView = 4; // Fixed 4 items per view
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // Keep activeIndex in bounds
-  useEffect(() => {
-    if (!items || items.length === 0) return;
-    setActiveIndex((i) => Math.max(0, Math.min(i, items.length - 1)));
-  }, [items]);
-
   // Scroll active item into view
   const scrollToActive = useCallback(() => {
     const container = containerRef.current;
